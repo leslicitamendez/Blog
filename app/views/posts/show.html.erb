@@ -9,24 +9,10 @@
 </p>
 
 <h2> Comentarios </h2>
-<% @post.comments.each do |comment| %>
-	<p>
-		<strong> Comentario: </strong>
-		<%= comment.body %>
-	</p>
-<% end %>
+<%= render @post.comments %>
 
 <h2> Añadir comentario: </h2>
-<%= form_for([@post, @post.comments.build]) do |c| %>
-	<p> 
-		<%= c.label :Comentario %> <br>
-		<%= c.text_area :body %>
-	</p>
-
-	<p>
-		<%= c.submit("Comentar") %>
-	</p>
-<% end %>
+<%= render "comments/form" %>
 
 <br>
 <%= link_to 'Atras', posts_path %>
