@@ -6,9 +6,12 @@ Blog::Application.routes.draw do
 
   get '/posts' => 'posts#index'
   get '/posts/new' => 'posts#new'
-  get '/posts/:id' => 'posts#show'
+  get '/posts/show/:id' => 'posts#show'
+  get '/posts/:id' => 'posts#edit'
+  get '/posts/delete/:id' => 'posts#delete'
 
   post '/posts' => 'posts#create'
+  post '/posts/:id' => 'posts#update'
   # You can have the root of your site routed with "root"
   root 'blog#index'
 
