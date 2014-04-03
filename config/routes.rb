@@ -6,6 +6,8 @@ Blog::Application.routes.draw do
     resources :comments
   end
 
+  resources :posts
+
   get '/blog' => 'blog#index'
 
   get '/posts' => 'posts#index'

@@ -12,7 +12,8 @@
 <%= render @post.comments %>
 
 <h2> Añadir comentario: </h2>
-<%= render "comments/form" %>
+<%= render "comments/forma" %>
 
 <br>
 <%= link_to 'Atras', posts_path %>
+| <%= link_to 'Editar', edit_post_path(@post) %>
