@@ -8,12 +8,20 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@post = Post.new(params[:post].permit(:title, :text))
 		if @post.save
 			redirect_to '/posts', notice: 'La publicacion ha sido creada exitosamente'
 		else
 			render 'new'
 		end
+	end
+
+	def show
+		@post = Post.find(params[:id])
+	end
+
+	def edit
+		@post = Post.find(params[:id])
 	end
 
 	private
