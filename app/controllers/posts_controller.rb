@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	skip_before_filter :verify_authenticity_token
 	def index
 		@posts = Post.all
 	end
@@ -8,7 +9,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(params[:post].permit(:title, :text))
+		@post = Post.new(post_params)
 		if @post.save
 			redirect_to '/posts', notice: 'La publicacion ha sido creada exitosamente'
 		else
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-		if @post.update(params[:post].permit(:title, :text))
+		if @post.update(post_params)
 			redirect_to '/posts', notice: 'La publicacion ha sido actualizada exitosamente'
 		else
 			render 'edit'

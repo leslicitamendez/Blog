@@ -1,4 +1,6 @@
 <p>
 	<strong> Comentario: </strong>
 	<%= comment.body %>
+	<br>
+	<p> Publicado: <%= time_ago_in_words(comment.created_at) %> </p>
 </p>

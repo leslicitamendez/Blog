@@ -1,7 +1,7 @@
 <%= form_for([@post, @post.comments.build]) do |c| %>
 	<p> 
-		<%= c.label :Comentario %> <br>
-		<%= c.text_area :body %>
+		<%= c.label :body, "Comentario" %> <br>
+		<%= c.text_area :body, size: "35x8" %>
 	</p>
 
 	<p>

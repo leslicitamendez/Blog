@@ -1,21 +1,17 @@
 <% if @post.errors.any? %>
-	<%= @post.errors.full_messages.each do |msg| %>
+	<% @post.errors.full_messages.each do |msg| %>
 		<li> <%= msg %> </li>
 	<% end %>
 <% end %>
 
-<%= form_for :post, url: posts_path do |f| %>
-	<p>
-		<%= f.label("Titulo:") %> <br>
-		<%= f.text_field :title %>
-	</p>
-
-	<p>
-		<%= f.label("Contenido:") %> <br>
-		<%= f.text_area :text %>
-	</p>
-
-	<p>
-		<%= f.submit("Guardar") %>
-	</p>
-<% end %>
+<form action="/posts<%= @post.id ? '/'+@post.id.to_s : '' %>" method="post">
+	Titulo:
+	<br>
+	<input type="textfield" name="post[title]" value="<%= @post.title %>">
+	<br><br>
+	Contenido:
+	<br>
+	<textarea name="post[text]" cols="35" rows="8"> </textarea>
+	<br><br>
+	<input type="submit" name"commit" value="Guardar">
+</form>
