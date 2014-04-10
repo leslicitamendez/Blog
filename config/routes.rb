@@ -16,6 +16,7 @@ Blog::Application.routes.draw do
   get '/posts/:id' => 'posts#edit'
   get '/posts/delete/:id' => 'posts#delete'
   get '/posts/like/:id' => 'posts#like'
+  get '/posts/dislike/:id' => 'posts#dislike'
 
   post '/posts' => 'posts#create'
   post '/posts/:id' => 'posts#update'

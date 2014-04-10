@@ -46,8 +46,15 @@ class PostsController < ApplicationController
 	def like
 		@post = Post.find(params[:id])
 		@post.like = @post.like ? @post.like+1 : 1
+		@post.save
+		redirect_to '/'
+	end
+
+	def dislike
+		@post = Post.find(params[:id])
+		@post.like = @post.like!=0 ? @post.like-1 : @post.like
 		if @post.save
-			redirect_to '/', notice: 'Se añadió un like'
+			redirect_to '/', notice: 'Se borro un Me Gusta'
 		else
 			render 'index'
 		end

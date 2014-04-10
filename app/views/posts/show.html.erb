@@ -8,6 +8,16 @@
 	<strong> Contenido: </strong>
 	<%= @post.text %>
 </p>
+
+<p>
+	<a href="/posts/like/<%= @post.id %>"> Me gusta : </a>
+	<%= @post.like %>
+</p>
+
+<p>
+	<a href="/posts/dislike/<%= @post.id %>"> No me gusta </a>
+</p>
+
 <p>
 	Publicado: <%= time_ago_in_words(@post.created_at) %> ago
 </p>

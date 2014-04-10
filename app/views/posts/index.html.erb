@@ -9,7 +9,6 @@
 		<th> Título </th>
 		<th> Contenido </th>
 		<th> Fecha Creación </th>
-		<th> Me Gusta </th>
 	</tr>
 
 	<% @posts.each do |post| %>
@@ -17,11 +16,9 @@
 			<td> <%= post.title %> </td>
 			<td> <%= post.text %> </td>
 			<td> <%= post.created_at %> </td>
-			<td> <%= post.like %> </td>
 
 			<td> <%= link_to 'Editar', edit_post_path(post) %> </td>
 			<td> <a href="/posts/delete/<%= post.id %>"> Eliminar </a> </td>
-			<td> <a href="/posts/like/<%= post.id %>"> Me gusta </a></td>
 		</tr>
 	<% end %>
 </table>
