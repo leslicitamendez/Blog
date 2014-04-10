@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403072737) do
+ActiveRecord::Schema.define(version: 20140408182525) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140403072737) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "like"
   end
 
 end

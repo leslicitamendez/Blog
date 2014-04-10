@@ -20,8 +20,37 @@ body {
 	background-size: cover;
 }
 
-th {
-	color: crimson;
+.mytable {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-color: #dc143c;
+	width: 60%;
+}
+
+.mytable td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #fff;
+	color: #333;
+}
+
+.mytable th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #dc143c;
+	color: #fff;
+	background-color: #dc143c;
 }
 
 input[type=submit] {
@@ -72,8 +101,8 @@ div[id=user_nav] {color: darkred;}
 h1{color: brown;}
 h2{color: darkred;}
 
-a:link {color: blue; text-decoration:none;}
-a:visited {color:blue; text-decoration:none;}
+a:link {color: #0000cc; text-decoration:none;}
+a:visited {color: #0000cc; text-decoration:none;}
 a:hover {text-decoration: underline;}
 
 #footer

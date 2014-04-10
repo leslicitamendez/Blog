@@ -1,16 +1,24 @@
 <br><br><br>
-<h1> Publicaciones </h1> <br>
+<h1> > Pantalla Principal < </h1>
+<h2> Publicaciones </h2> <br>
 
-<table>
+<table class="mytable" align="center">
 	<tr>
-		<th> Titulo </th>
+		<th> Título </th>
 		<th> Contenido </th>
+		<th> Fecha Creación </th>
+		<th> Me Gusta </th>
 	</tr>
 
 	<% @posts.each do |post| %>
 		<tr>
 			<td> <%= post.title %> </td>
 			<td> <%= post.text %> </td>
+			<td> <%= post.created_at %> </td>
+			<td> <%= post.like %> </td>
+
+			<td> <a href="/posts/show/<%= post.id %> "> Mostrar </a> </td>
+			<td> <a href="/posts/like/<%= post.id %>"> Me gusta </a> </td>
 		</tr>
 	<% end %>
 </table>

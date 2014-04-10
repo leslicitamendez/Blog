@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		if @post.save
-			redirect_to '/posts', notice: 'La publicacion ha sido creada exitosamente'
+			redirect_to '/posts', notice: 'La publicación ha sido creada exitosamente'
 		else
 			render 'new'
 		end
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(post_params)
-			redirect_to '/posts', notice: 'La publicacion ha sido actualizada exitosamente'
+			redirect_to '/posts', notice: 'La publicación ha sido actualizada exitosamente'
 		else
 			render 'edit'
 		end
@@ -37,9 +37,19 @@ class PostsController < ApplicationController
 	def delete
 		@post = Post.find(params[:id])
 		if @post.destroy
-			redirect_to '/posts', notice: 'La publicacion ha sido borrada exitosamente'
+			redirect_to '/posts', notice: 'La publicación ha sido borrada exitosamente'
 		else
-			redirect_to '/posts', notice: 'No se pudo borrar la publicacion'
+			redirect_to '/posts', notice: 'No se pudo borrar la publicación'
+		end
+	end
+
+	def like
+		@post = Post.find(params[:id])
+		@post.like = @post.like ? @post.like+1 : 1
+		if @post.save
+			redirect_to '/', notice: 'Se añadió un like'
+		else
+			render 'index'
 		end
 	end
 

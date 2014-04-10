@@ -3,7 +3,7 @@
 		<li> <%= msg %> </li>
 	<% end %>
 <% end %>
-
+<br>
 <form action="/posts<%= @post.id ? '/'+@post.id.to_s : '' %>" method="post">
 	Titulo:
 	<br>
