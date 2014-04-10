@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408182525) do
+ActiveRecord::Schema.define(version: 20140410182036) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20140408182525) do
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+
+  create_table "history_posts", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "history_posts", ["post_id"], name: "index_history_posts_on_post_id"
 
   create_table "likes", force: true do |t|
     t.integer  "post_id"
@@ -36,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140408182525) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "like"
+    t.string   "category"
   end
 
 end

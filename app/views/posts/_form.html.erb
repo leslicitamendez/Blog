@@ -9,9 +9,20 @@
 	<br>
 	<input type="textfield" name="post[title]" value="<%= @post.title %>">
 	<br><br>
+
 	Contenido:
 	<br>
 	<textarea name="post[text]" cols="35" rows="8"> </textarea>
 	<br><br>
+
+	Categoria:
+	<br>
+	<select name="post[category]" value="<%= @post.category %>">
+		<option value="Historia">Historia</option>
+		<option value="Entretenimiento">Entretenimiento</option>
+		<option value="Ciencia">Ciencia</option>
+	</select>
+	<br><br>
+
 	<input type="submit" name"commit" value="Guardar">
 </form>
