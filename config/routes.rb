@@ -2,12 +2,6 @@ Blog::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :posts do
-    resources :comments
-  end
-
-  resources :posts
-
   get '/blog' => 'blog#index'
 
   get '/posts' => 'posts#index'
@@ -17,11 +11,18 @@ Blog::Application.routes.draw do
   get '/posts/delete/:id' => 'posts#delete'
   get '/posts/like/:id' => 'posts#like'
   get '/posts/dislike/:id' => 'posts#dislike'
+  get '/posts/filter' => 'posts#filter'
 
   post '/posts' => 'posts#create'
   post '/posts/:id' => 'posts#update'
   # You can have the root of your site routed with "root"
   root 'blog#index'
+
+  resources :posts do
+    resources :comments
+  end
+
+  resources :posts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -4,6 +4,11 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
+	def filter
+		@posts = Post.all
+		@category = params[:category]
+	end
+
 	def new
 		@post = Post.new
 	end

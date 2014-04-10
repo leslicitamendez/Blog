@@ -4,6 +4,12 @@
 
 <%= notice %> <br><br><br>
 
+<form action="/posts/filter" method="get">
+    Categoria a buscar:
+    <input type="text" name="category" value ="" size="50">
+    <input type="submit" name="commit" value="Filtrar">
+</form>
+<br><br>
 <table class="mytable" align="center">
 	<tr>
 		<th> Título </th>
